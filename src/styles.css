@@ -1,0 +1,475 @@
+/* ===== Estilos base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #FAF7F2;
+  color: #1E3A5F;
+  line-height: 1.5;
+  padding: 1rem;
+}
+
+.contenedor {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #1E3A5F;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1E3A5F;
+}
+
+/* ===== Racha ===== */
+.racha {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.25rem;
+  background: #FFFFFF;
+  border: 2px solid #2D5F3F;
+  border-radius: 12px;
+}
+
+.racha-numero {
+  display: block;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #2D5F3F;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.racha-texto {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1E3A5F;
+  margin-top: 0.25rem;
+}
+
+.racha-mejor {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+/* ===== Tarjetas ===== */
+.tarjeta {
+  background: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Formulario ===== */
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: #1E3A5F;
+}
+
+input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #D1CCC2;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #FFFFFF;
+  color: #1E3A5F;
+  transition: border-color 0.15s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2D5F3F;
+  box-shadow: 0 0 0 3px rgba(45, 95, 63, 0.1);
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #2D5F3F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: #234A31;
+}
+
+button:focus-visible {
+  outline: 2px solid #1E3A5F;
+  outline-offset: 2px;
+}
+
+/* ===== Lista de sesiones ===== */
+.lista {
+  list-style: none;
+}
+
+.lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #E5E0D8;
+  font-size: 0.95rem;
+}
+
+.lista li:last-child {
+  border-bottom: none;
+}
+
+.lista-fecha {
+  font-weight: 600;
+  color: #6B7280;
+  font-size: 0.8rem;
+  min-width: 110px;
+}
+
+.lista-detalle {
+  flex: 1;
+  margin-left: 0.75rem;
+  color: #1E3A5F;
+}
+
+.lista-minutos {
+  font-weight: 700;
+  color: #2D5F3F;
+  white-space: nowrap;
+}
+
+.lista-vacia {
+  text-align: center;
+  color: #6B7280;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+/* ===== Estadísticas ===== */
+.stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-numero {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1E3A5F;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.stat-texto {
+  font-size: 0.75rem;
+  color: #6B7280;
+}
+
+/* ===== Botones de sesión ===== */
+.lista-acciones {
+  display: flex;
+  gap: 0.35rem;
+  margin-left: 0.5rem;
+}
+
+.btn-editar,
+.btn-eliminar {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.btn-editar {
+  background: #E5E0D8;
+  color: #1E3A5F;
+}
+
+.btn-editar:hover {
+  background: #D1CCC2;
+}
+
+.btn-eliminar {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+.btn-eliminar:hover {
+  background: #B91C1C;
+}
+
+.btn-editar:focus-visible,
+.btn-eliminar:focus-visible {
+  outline: 2px solid #1E3A5F;
+  outline-offset: 2px;
+}
+
+/* ===== Mapa de calor ===== */
+.mapa-grid {
+  display: grid;
+  grid-template-columns: repeat(52, 12px);
+  grid-template-rows: auto repeat(7, 12px);
+  gap: 2px;
+  font-size: 0.7rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mapa-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.mapa-grid::-webkit-scrollbar-thumb {
+  background: #D1CCC2;
+  border-radius: 3px;
+}
+
+.mapa-etiqueta {
+  grid-column: span 1;
+  font-weight: 600;
+  color: #6B7280;
+  padding: 0.25rem 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.mapa-celda {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.mapa-celda:hover {
+  transform: scale(1.5);
+  z-index: 1;
+  position: relative;
+}
+
+.mapa-celda-futuro {
+  visibility: hidden;
+}
+
+.mapa-tooltip {
+  position: absolute;
+  background: #1E3A5F;
+  color: #FFFFFF;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Accesibilidad: reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ===== Distribución de temas (gráfico de queso) ===== */
+.distribucion-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.pie-chart {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  cursor: crosshair;
+  /* background se aplica vía JS con conic-gradient completo */
+}
+
+/* Fallback para navegadores sin support de conic-gradient */
+@supports not (background: conic-gradient(red, blue)) {
+  .pie-chart {
+    background: #E5E0D8;
+  }
+}
+
+.pie-leyenda {
+  list-style: none;
+  flex: 1;
+  min-width: 0;
+  font-size: 0.85rem;
+}
+
+.pie-leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #E5E0D8;
+}
+
+.pie-leyenda li:last-child {
+  border-bottom: none;
+}
+
+.leyenda-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.pie-tooltip {
+  position: absolute;
+  background: #1E3A5F;
+  color: #FFFFFF;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateX(-50%);
+}
+
+.distribucion-vacio {
+  text-align: center;
+  color: #6B7280;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+}
+
+/* ===== Objetivo semanal ===== */
+.objetivo-semanal {
+  background: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.objetivo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.error-inline {
+  color: #A82B1A;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.ayuda {
+  color: #6B7280;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.barra-progreso {
+  height: 12px;
+  background: #E5E0D8;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.barra-progreso-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barra-progreso-fill {
+    transition: none;
+  }
+}
+
+.progreso-texto-principal {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.progreso-texto-secundario {
+  color: #6B7280;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.semana-pasada {
+  color: #6B7280;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.btn-cambiar {
+  margin-top: 0.75rem;
+  background: #E5E0D8;
+  color: #1E3A5F;
+}
+
+.btn-cambiar:hover {
+  background: #D1CCC2;
+}
+
+/* Responsive: móvil */
+@media (max-width: 600px) {
+  .distribucion-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .pie-chart {
+    width: 160px;
+    height: 160px;
+  }
+
+  .pie-leyenda {
+    text-align: center;
+    width: 100%;
+  }
+
+  .pie-leyenda li {
+    justify-content: center;
+  }
+}

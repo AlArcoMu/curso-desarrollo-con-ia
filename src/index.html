@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diario de Estudio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <h1>Diario de Estudio</h1>
+
+    <!-- Racha actual -->
+    <section class="racha">
+      <span class="racha-numero" id="rachaNumero">0</span>
+      <span class="racha-texto">días de racha 🔥</span>
+      <span class="racha-mejor" id="rachaMejor">Mejor racha: 0 días 🏆</span>
+    </section>
+
+    <!-- Formulario para registrar sesión -->
+    <section class="tarjeta">
+      <h2>Registrar sesión</h2>
+      <form id="formulario">
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" autocomplete="off" required>
+
+        <label for="tema">Tema</label>
+        <input type="text" id="tema" placeholder="¿Qué estudiaste?…" autocomplete="off" required>
+
+        <label for="minutos">Minutos</label>
+        <input type="number" id="minutos" min="1" placeholder="Ej: 45…" autocomplete="off" inputmode="numeric" required>
+
+        <button type="submit">Guardar sesión</button>
+      </form>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="tarjeta stats">
+      <div class="stat">
+        <span class="stat-numero" id="totalMinutos">0</span>
+        <span class="stat-texto">minutos totales</span>
+      </div>
+      <div class="stat">
+        <span class="stat-numero" id="semanaMinutos">0</span>
+        <span class="stat-texto">esta semana</span>
+      </div>
+      <div class="stat">
+        <span class="stat-numero" id="diasMes">0</span>
+        <span class="stat-texto">días este mes</span>
+      </div>
+    </section>
+
+    <!-- Objetivo semanal -->
+    <section class="tarjeta objetivo-semanal" id="tarjetaObjetivo">
+      <h2>Objetivo semanal</h2>
+      <form id="formularioObjetivo" class="objetivo-form" novalidate>
+        <label for="inputObjetivo">Minutos objetivo</label>
+        <input type="number" id="inputObjetivo" min="1" max="10080" step="1" required
+               aria-describedby="objetivo-error objetivo-ayuda" autocomplete="off" inputmode="numeric">
+        <p id="objetivo-error" class="error-inline" role="alert" aria-live="polite" hidden>
+          Introduce un número entre 1 y 10080
+        </p>
+        <p id="objetivo-ayuda" class="ayuda">Semana = lunes a domingo</p>
+        <button type="submit" id="btnObjetivo">Guardar objetivo</button>
+      </form>
+      <div id="objetivoProgreso" class="objetivo-progreso" hidden>
+        <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+             aria-label="Progreso objetivo semanal" class="barra-progreso">
+          <div class="barra-progreso-fill" style="width: 0%"></div>
+        </div>
+        <p id="textoProgresoPrincipal" class="progreso-texto-principal"></p>
+        <p id="textoProgresoSecundario" class="progreso-texto-secundario"></p>
+        <button type="button" id="btnCambiarObjetivo" class="btn-cambiar" hidden>Cambiar objetivo</button>
+      </div>
+      <p id="textoSemanaPasada" class="semana-pasada" hidden></p>
+    </section>
+
+    <!-- Mapa de calor -->
+    <section class="tarjeta">
+      <h2>Mapa de estudio</h2>
+      <div id="mapaCalor"></div>
+    </section>
+
+    <!-- Distribución de temas (mes actual) -->
+    <section class="tarjeta">
+      <h2>Distribución de temas (mes actual)</h2>
+      <div id="distribucionTemas"></div>
+    </section>
+
+    <!-- Lista de sesiones -->
+    <section class="tarjeta">
+      <h2>Historial</h2>
+      <ul id="lista" class="lista"></ul>
+      <p id="listaVacia" class="lista-vacia">Todavía no hay sesiones registradas.</p>
+    </section>
+  </main>
+
+  <script src="logica.js"></script>
+  <script src="mapa.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
